@@ -1,0 +1,15 @@
+apiVersion: openfaas.com/v1
+kind: Function
+metadata:
+  name: hello-world
+  namespace: openfaas-fn
+spec:
+  name: hello-world
+  image: hello-world:latest
+  labels:
+    com.openfaas.scale.min: "1"
+  environment:
+    write_debug: "true"
+  fprocess: "python3 index.py"
+  buildArgs:
+    - --build-arg ADDITIONAL_PACKAGE=curl
