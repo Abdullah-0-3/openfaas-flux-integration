@@ -5,10 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2m
-  path: ../functions
+  path: ./functions
   prune: true
   sourceRef:
     kind: GitRepository
-    name: openfaas-flux
+    name: openfaas-flux-integration
     namespace: flux-system
-  validation: client
